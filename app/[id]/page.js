@@ -1,8 +1,8 @@
-import fecthData from "../fetching/fetch"
+import fetchData from "../fetching/fetch"
 
 
 export default async  function DynamicPage({ params }) {
-    const data = await fecthData()
+    const data = await fetchData()
     console.log(await data)
     let id;
     for (let i = 0; i < data.length; i++) {

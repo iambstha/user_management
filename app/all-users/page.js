@@ -42,7 +42,7 @@ export default function About() {
         className="border-2 border-slate-200 rounded outline-none p-1 pl-2 focus-within:border-slate-600 flex w-full"
       />
       {filteredData.length ? (
-        <ul className="text-blue-800">
+        <ul className="text-blue-800 flex gap-2 flex-wrap justify-between  ">
           {filteredData.map((user) => (
             <li
               key={user.id}

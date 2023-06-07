@@ -29,7 +29,7 @@ export default async function Home() {
       </h1>
       {/* <iframe src="https://reactwithbishal.substack.com/embed" width="100%" height="auto" className=' bg-white '  frameborder="0" ></iframe> */}
       {
-       todos ? 
+       todos.length ? 
        <ul className=' flex gap-4 flex-wrap '>
        {
          todos.map(todo => (
@@ -46,6 +46,7 @@ export default async function Home() {
      : 
      <span>No users found . . .</span> 
       }
+      
     </main>
   )
 }

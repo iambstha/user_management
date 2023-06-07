@@ -1,5 +1,6 @@
 
 import { prisma } from '@/db'
+import Link from 'next/link'
 
 function getTodos(){
   return prisma.todo.findMany()
@@ -21,19 +22,30 @@ export default async function Home() {
   }
 
   return (
-    <main className=" flex flex-col m-2 p-2 w-full ">
+    <main className=" flex flex-col m-2 p-2 ">
       <h1 className='  flex justify-between items-center mb-4 ' >
         <p className='text-2xl text-orange-400 uppercase  ' >Newest Users</p>
-        <button className=' border-2 border-orange-200 p-2 pl-4 pr-4 bg-orange-200 text-blue-950 rounded-md '>Delete All</button>
+        {/* <Link href='/add-users' className=' border-2 border-orange-200 p-2 pl-4 pr-4 bg-orange-200 text-blue-950 hover:bg-orange-400 hover:border-orange-400 rounded-md '>Add users</Link> */}
       </h1>
       {/* <iframe src="https://reactwithbishal.substack.com/embed" width="100%" height="auto" className=' bg-white '  frameborder="0" ></iframe> */}
-      <ul className=' flex gap-2 flex-wrap '>
-        {
-          todos.map(todo => (
-            <li key={todo.id} className=' felx text-center justify-center border-2 border-slate-200 p-2 pl-4 pr-4  ' >{todo.title}</li>
-          ))
-        }
-      </ul>
+      {
+       todos ? 
+       <ul className=' flex gap-4 flex-wrap '>
+       {
+         todos.map(todo => (
+           <li key={todo.id} className=' felx text-center justify-center border-2 border-slate-200 p-2 pl-4 pr-4 hover:bg-slate-200 hover:border-slate-200 cursor-pointer rounded-lg w-60  ' >
+             {todo.title}
+             <br />
+             <span>{todo.createdAt.toLocaleDateString()}</span>
+             <br />
+             <span>{todo.createdAt.toLocaleTimeString()}</span>
+           </li>
+         ))
+       }
+     </ul>
+     : 
+     <span>No users found . . .</span> 
+      }
     </main>
   )
 }

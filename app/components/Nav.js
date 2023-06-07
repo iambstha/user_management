@@ -1,12 +1,14 @@
 import Link from "next/link"
-export default function Nav(){
-    return(
-        <nav className=" mb-4 " >
-            <ul className=" flex text-orange-700 w-full border-2 ">
-                <li className=" p-2 m-2 "><Link href='/' >Home</Link></li>
-                <li className=" p-2 m-2 "><Link href='/all-users' >All Users</Link></li>
-                <li className=" p-2 m-2 "><Link href='/all-users/me' >Me</Link></li>
-                <li className=" p-2 m-2 "><Link href='/add-users' className=" border-2 border-slate-400 p-2 bg-slate-400 text-slate-100 hover:bg-slate-500 hover:border-slate-500 rounded " >Add users</Link></li>
+export default function Nav() {
+    return (
+        <nav className=" mb-4 flex justify-between w-full border-2 " >
+            <ul className=" flex justify-start text-orange-700 ">
+                <li className=" p-2 m-2 "><Link href='/' >Homepage</Link></li>
+            </ul>
+            <ul className=" flex justify-end text-orange-700 ">
+                <li className=" p-2 m-2 "><Link href='/all-users' >Sample Users</Link></li>
+                <li className=" p-2 m-2 border-2 border-orange-100 bg-orange-100 hover:bg-orange-200 hover:border-orange-200 transition-colors  "><Link href='/all-users/me' >My Profile</Link></li>
+                <li className=" p-2 m-2 border-2 border-orange-100 bg-orange-100 hover:bg-orange-200 hover:border-orange-200 transition-colors  "><Link href='/add-users'  >Add users</Link></li>
             </ul>
         </nav>
     )

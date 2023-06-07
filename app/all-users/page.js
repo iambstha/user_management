@@ -1,5 +1,4 @@
 'use client'
-// About.js
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import fetchData from '../fetching/fetch';

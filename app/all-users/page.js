@@ -26,14 +26,14 @@ export default function About() {
       setFilteredData(data);
     } else {
       const filteredResults = data.filter((user) =>
-        user.username.toLowerCase().includes(keyword.toLowerCase())
+        user.title.toLowerCase().includes(keyword.toLowerCase())
       );
       setFilteredData(filteredResults);
     }
   }, [keyword, data]);
 
   return (
-    <div className="w-96">
+    <div className="w-full">
       <input
         onChange={handleChange}
         type="text"
@@ -41,7 +41,7 @@ export default function About() {
         className="border-2 border-slate-200 rounded outline-none p-1 pl-2 focus-within:border-slate-600 flex w-full"
       />
       {filteredData.length ? (
-        <ul className="text-blue-800 flex flex-col gap-2 flex-wrap justify-between  ">
+        <ul className="text-blue-800 flex flex-row gap-2 flex-wrap justify-stretch  ">
           {filteredData.map((user) => (
             <li
               key={user.id}

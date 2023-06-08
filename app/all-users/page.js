@@ -41,13 +41,13 @@ export default function About() {
         className="border-2 border-slate-200 rounded outline-none p-1 pl-2 focus-within:border-slate-600 flex w-full"
       />
       {filteredData.length ? (
-        <ul className="text-blue-800 flex gap-2 flex-wrap justify-between  ">
+        <ul className="text-blue-800 flex flex-col gap-2 flex-wrap justify-between  ">
           {filteredData.map((user) => (
             <li
               key={user.id}
               className="cursor-pointer flex mt-2 mb-2 rounded border-2 border-slate-300 bg-slate-200 hover:border-slate-500 focus-within:border-slate-900"
             >
-              <Link href={user.username} className="p-2 w-full">{user.username}</Link>
+              <Link href={user.title} className="p-2 w-full">{user.title}</Link>
             </li>
           ))}
         </ul>

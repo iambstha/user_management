@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',
     experimental : {
         serverActions: true
+    },
+    images: {
+        domains: ['via.placeholder.com']
     }
 }
 
